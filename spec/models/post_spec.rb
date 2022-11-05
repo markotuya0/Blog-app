@@ -1,49 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  describe 'validations' do
-    author = User.create(
-      name: 'Justine Rey',
+  before(:all) do
+    @user = User.create(
+      name: 'John Doe',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-      bio: 'Teacher from Argentina.',
-      posts_counter: 1
+      bio: 'Teacher from Mexico.',
+      posts_counter: 0
     )
 
-    subject do
-      Post.new(title: 'Mock ruby on rails test ', text: 'check app functionality', author:, likes_counter: 0,
-               comments_counter: 0)
-    end
-
-    before { subject.save }
-
-    it 'should be present and not allowing blank' do
-      subject.title = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'should have a maximum length of 250' do
-      subject.text = 'Likes'
-      expect(subject).to be_valid
-    end
-
-    it 'should be numerical' do
-      subject.comments_counter = 'hello'
-      expect(subject).to_not be_valid
-    end
-
-    it 'should be an integer and greater than or equal to zero' do
-      subject.comments_counter = -9
-      expect(subject).to_not be_valid
-    end
-
-    it 'should be numerical' do
-      subject.likes_counter = 'hello'
-      expect(subject).to_not be_valid
-    end
-
-    it 'should be an integer and greater than or equal to zero' do
-      subject.likes_counter = -9
-      expect(subject).to_not be_valid
-    end
+    @post = Post.create(
+      title: 'Hello World!',
+      text: 'This is my first post.',
+      comments_counter: 0,
+      likes_counter: 0,
+      author_id: @user.id
+    )
+  end
+  it '@post should be valid' do
+    expect(@post).to be_valid
+  end
+  it '@post should have 250 maximum length' do
+    @post.title = 'Helo World!'
+    expect(@post).to be_valid
+  end
+  it '@post comments_counter to be an integer greater than or equal to 0' do
+    @post.comments_counter = 'one'
+    expect(@post).to_not be_valid
+  end
+  it '@post likes_counter to be an integer greater than or equal to 0' do
+    @post.likes_counter = 'one'
+    expect(@post).to_not be_valid
   end
 end
