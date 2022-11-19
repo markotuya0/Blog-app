@@ -13,3 +13,119 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.user {
+  display: flex;
+  margin-top: 20px;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.photo {
+  border: 2px solid black;
+  padding: 45px;
+  text-align: center;
+}
+
+.info {
+  border: 2px solid black;
+  padding-right: 64%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.number-posts {
+  position: absolute;
+  right: 15px;
+  top: 80px;
+  font-size: 20px;
+}
+
+#bio {
+  border: 2px solid black;
+  margin-left: 52px;
+  margin-right: 159px;
+  margin-top: 20px;
+  padding-bottom: 150px;
+}
+
+.post {
+  border: 2px solid black;
+  margin-left: 52px;
+  margin-right: 159px;
+  margin-top: 20px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.text-h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 13px;
+  margin-top: 13px;
+}
+
+.text-h4 p {
+  margin-left: 13px;
+  margin-top: 13px;
+}
+
+.post-p {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.reaction-count {
+  position: absolute;
+  right: 23px;
+  margin-top: 43px;
+}
+
+#btn-posts {
+  padding: 8px;
+  margin-left: 27rem;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: outset;
+}
+
+.comments {
+  border: 2px solid black;
+  margin-left: 52px;
+  margin-right: 159px;
+  margin-top: 2px;
+  padding-bottom: 60px;
+}
+
+.comment {
+  display: flex;
+  gap: 6px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.post-detail {
+  border: 2px solid black;
+  margin-left: 52px;
+  margin-right: 159px;
+  margin-top: 51px;
+  padding-bottom: 179px;
+}

@@ -1,1 +1,11 @@
-<h1> here is the list of all posts by only a single user </h1>
+<section id="users">
+  <%= render "shared/user_details", user: @user %>
+</section>
+
+<section id="recent-posts">
+  <%@posts.each_with_index do |post, index|%>
+    <%= render 'shared/post_excerpt', post: post, index: index %>
+    <%= render 'shared/comments', post: post, limit_comments: true %>   
+  <% end %>
+  <button class="btn see-posts">Pagination</button>
+</section>
