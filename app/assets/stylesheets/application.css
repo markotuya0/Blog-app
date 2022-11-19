@@ -130,9 +130,9 @@ body {
   padding-bottom: 179px;
 }
 
-reaction-btns {
-    display: flex;
-    gap: 20px;
-    margin-left: 50px;
-    margin-top: 15px;
-  }
+.reaction-btns {
+  display: flex;
+  gap: 20px;
+  margin-left: 50px;
+  margin-top: 15px;
+}
