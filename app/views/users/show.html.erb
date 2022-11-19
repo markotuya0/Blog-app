@@ -1,1 +1,28 @@
-<h1> here is the list of 1 user fetched by id</h1>
+<div>
+<div class="photo">
+    <%= render partial: "users/profile", locals: {user: @user.photo} %>
+</div>
+
+<div class="photo">
+   <h4> <%= @user.name %> </h4>
+   <p>Number of posts: <%= @user.posts_counter %></p>
+</div>
+
+<div class="bio">
+   <p>Bio</p>
+   <p><%= @user.bio %></p>
+</div>
+
+<% @user.three_most_recent_posts.each do |post| %>
+    <p> Post #<%= post.id %> </p>
+    <p> <%= post.title %> </p>
+    <p> <%= post.text %> </p>
+    <p>
+        <span> comments: <%= post.comments_counter %> </span>
+        <span> Likes: <%= post.likes_counter %> </span>
+     </p>
+ <% end %>
+ 
+ <button> <%= link_to "See all posts", "#{@user.id}/posts" %> </button>
+</div>
+
