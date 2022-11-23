@@ -30,4 +30,8 @@ RSpec.describe 'Post index page', type: :feature do
   it 'shows how many comments a post has' do
     expect(page).to have_content(1)
   end
+
+  it 'shows how many likes a post has' do
+    expect(page).to have_content(0)
+  end
 end
