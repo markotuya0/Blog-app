@@ -16,8 +16,13 @@ RSpec.describe 'Users index', type: :feature do
   it 'renders photo of the user' do
     expect(page.html).to include(@user.photo)
   end
-  
+
   it 'shows number of posts written by agiven user' do
     expect(page).to have_content(0)
+  end
+  
+  it 'redirects to a give user show page' do
+    click_link @user.name
+    expect(page).to have_current_path(user_path(@user.id))
   end
 end
