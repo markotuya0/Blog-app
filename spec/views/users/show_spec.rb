@@ -9,8 +9,12 @@ RSpec.describe 'User show', type: :feature do
   it 'renders photo of the user' do
     expect(page.html).to include(@user.photo)
   end
-  
+
   it 'show username of a given user' do
     expect(page).to have_content('Elon Musk')
+  end
+
+  it 'shows number of posts written by agiven user' do
+    expect(page).to have_content(0)
   end
 end
