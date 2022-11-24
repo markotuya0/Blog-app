@@ -21,6 +21,9 @@ it 'show username of a given user' do
 it 'shows number of posts written by agiven user' do
     expect(page).to have_content(4)
   end
+  it 'shows post title of the user' do
+    expect(page).to have_content('My first post')
+  end
 
   it 'shows first comments of the post' do
     expect(page).to have_content('My first awesome comment straight from Kenya')
