@@ -38,4 +38,8 @@ RSpec.describe 'Post index page', type: :feature do
     click_link @post_one.title
     expect(page).to have_current_path(user_post_path(@user.id, @post_one))
   end
+
+  it 'shows number of posts written by agiven user' do
+    expect(page).to have_content(4)
+  end
 end
