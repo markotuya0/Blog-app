@@ -26,4 +26,8 @@ RSpec.describe 'User post', type: :feature do
   it 'renders post body ' do
     expect(page).to have_content(@post_one.text)
   end
+
+  it 'renders username oyf each commentor ' do
+    expect(page.html).to include(@user.name)
+  end
 end
