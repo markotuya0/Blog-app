@@ -11,8 +11,6 @@ RSpec.describe 'Post index page', type: :feature do
     visit user_posts_path(@user)
   end
 
-
-
   it 'shows first comments of the post' do
     expect(page).to have_content('My first awesome comment straight from Kenya')
   end

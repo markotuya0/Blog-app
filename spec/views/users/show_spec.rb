@@ -8,7 +8,6 @@ RSpec.describe 'User show', type: :feature do
     Post.create(title: 'My third post', text: 'Body text of the post', author_id: @user.id)
     Post.create(title: 'My fourth post', text: 'Body text of the post', author_id: @user.id)
 
-
     visit user_path(@user)
   end
 
