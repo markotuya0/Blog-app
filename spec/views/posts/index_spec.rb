@@ -14,6 +14,9 @@ RSpec.describe 'Post index page', type: :feature do
 it 'renders photo of the user' do
     expect(page.html).to include(@user.photo)
   end
+it 'show username of a given user' do
+    expect(page).to have_content('Elon Musk')
+  end
 
   it 'shows first comments of the post' do
     expect(page).to have_content('My first awesome comment straight from Kenya')
