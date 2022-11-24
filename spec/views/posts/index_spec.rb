@@ -10,8 +10,10 @@ RSpec.describe 'Post index page', type: :feature do
     Comment.create(text: 'My first awesome comment straight from Kenya', author_id: @user.id, post_id: @post_one.id)
     visit user_posts_path(@user)
   end
-
-
+  
+it 'renders photo of the user' do
+    expect(page.html).to include(@user.photo)
+  end
 
   it 'shows first comments of the post' do
     expect(page).to have_content('My first awesome comment straight from Kenya')
