@@ -1,41 +1,39 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  # index
-  describe 'GET #index' do
+  describe 'GET /index' do
     before(:example) do
-      get '/users'
+      get '/'
     end
 
-    it 'is a success' do
-      expect(response).to have_http_status(200)
+    it 'return correct response' do
+      expect(response).to have_http_status(:ok)
     end
 
-    it 'renders index template' do
-      expect(response).to render_template('index')
+    it 'should respond with a correct template' do
+      expect(response).to render_template(:index)
     end
 
-    it 'renders placeholder for the response body' do
-      expect(response.body).to include('Here is a list of all users')
+    it 'body should have correct  placeholder text' do
+      expect(response.body).to include('Here is a list of users')
     end
   end
 
-  # show
-  describe 'GET show' do
+  describe 'GET /show' do
     before(:example) do
       get '/users/1'
     end
 
-    it 'is a success' do
-      expect(response).to have_http_status(200)
+    it 'return correct response' do
+      expect(response).to have_http_status(:ok)
     end
 
-    it 'renders index template' do
-      expect(response).to render_template('show')
+    it 'should render correct template' do
+      expect(response).to render_template(:show)
     end
 
-    it 'renders placeholder for the response body' do
-      expect(response.body).to include('Here is a list of one user fetched by their id')
+    it 'body should includes correct placeholder text' do
+      expect(response.body).to include('Here is an about of given user')
     end
   end
 end

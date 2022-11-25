@@ -1,12 +1,22 @@
 <section id="post">
   <div class="post-detail">
     <header>
-      <h4 class="post-one">Post #1 by <%= @author%> </h4>
+      <h4 class="post-one">Post #1  by <%= @author%> </h4>
       <span class="post-span">Comments: <%= @comments_count%>, Likes: <%= @likes_count%></span>
     </header>
     <p>
  <%= @post_text%>
     </p>
   </div>
+  <div class="reaction-btns">
+    <div class="add-comment">
+    <%= link_to 'Add comment', new_user_post_comment_path(@post.author, @post) %>
+  </div>
+   <div class="like-btn">
+   <%= form_with url:  user_post_likes_path(@post.author, @post) do |form| %>
+      <div>
+        <%= form.submit 'Like' %>
+      </div>
+    <% end %></div></div>
   <%= render 'shared/comments', post: @post  %>
 </section>
