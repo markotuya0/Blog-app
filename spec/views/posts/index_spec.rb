@@ -14,8 +14,17 @@ RSpec.describe 'Post index page', type: :feature do
   it 'renders photo of the user' do
     expect(page.html).to include(@user.photo)
   end
+
   it 'show username of a given user' do
     expect(page).to have_content('Elon Musk')
+  end
+
+  it 'shows number of posts written by agiven user' do
+    expect(page).to have_content(4)
+  end
+
+  it 'shows post title of the user' do
+    expect(page).to have_content('My first post')
   end
 
   it 'shows first comments of the post' do
@@ -37,17 +46,5 @@ RSpec.describe 'Post index page', type: :feature do
   it 'redirects to a given user show page' do
     click_link @post_one.title
     expect(page).to have_current_path(user_post_path(@user.id, @post_one))
-  end
-
-  it 'shows number of posts written by agiven user' do
-    expect(page).to have_content(4)
-  end
-
-  it 'shows post title of the user' do
-    expect(page).to have_content('My first post')
-  end
-
-  it 'shows some section of the post body' do
-    expect(page).to have_content('Body text of the post')
   end
 end

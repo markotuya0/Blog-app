@@ -11,31 +11,21 @@ RSpec.describe 'User post', type: :feature do
 
     visit user_post_path(@user, @post_one.id)
   end
-
   it 'renders who wrote the post ' do
     expect(page.html).to include(@user.name)
   end
-
   it 'renders number of comments ' do
     expect(page).to have_content(1)
   end
-
   it 'renders number of likes ' do
     expect(page).to have_content(0)
   end
-
   it 'renders post body ' do
     expect(page).to have_content(@post_one.text)
   end
-
-  it 'renders post body ' do
-    expect(page.html).to have_content(@post_one.text)
-  end
-
   it 'renders username of each commentor ' do
     expect(page.html).to include(@user.name)
   end
-
   it 'renders comment of each commentor ' do
     expect(page).to have_content('My first awesome comment straight from Kenya')
   end
