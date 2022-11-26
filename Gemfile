@@ -30,6 +30,7 @@ gem 'jbuilder'
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
